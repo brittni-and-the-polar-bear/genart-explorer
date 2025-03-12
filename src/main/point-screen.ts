@@ -70,10 +70,10 @@ export class PointScreen extends CanvasScreen {
             );
             style.strokeMultiplier = 10;
 
-            const x: number = Random.randomFloat(this.minX, this.maxX);
-            const y: number = Random.randomFloat(this.minY, this.maxY);
+            const x: number = Random.randomFloat(0, 1);
+            const y: number = Random.randomFloat(0, 1);
             const p: Point = new Point({
-                POSITION: new Coordinate(x, y, context),
+                COORDINATE: new Coordinate(x, y),
                 CONTEXT: context,
                 STYLE: style
             });
