@@ -52,8 +52,8 @@
   },
   "homepage": "https://github.com/brittni-and-the-polar-bear/sketch-context-explorer#readme",
   "dependencies": {
-    "@batpb/genart": "file://~/Desktop/npm-test/batpb-genart-2.0.0-rc.3-dev-19.tgz",
-    "p5": "^1.11.2"
+    "@batpb/genart": "file://~/Desktop/npm-test/batpb-genart-2.0.0-rc.3-dev-21.tgz",
+    "p5": "^1.11.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",

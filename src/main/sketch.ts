@@ -32,9 +32,10 @@ import {
 
 import { SketchScreen } from './sketch-screen';
 
-import { PointScreen } from './point-screen';
+import { PointScreen } from './geometry/point-screen';
 
 import '../../assets/styles/sketch.css';
+import {CircleScreen} from "./geometry/circle-screen";
 
 // TODO - GraphicsContext and CanvasContext
 // TODO - changing Canvas resolution at runtime
@@ -54,7 +55,11 @@ p5.setup = (): void => {
 
     const pointScreen: PointScreen = new PointScreen(buildPointScreen());
     Canvas.addScreen(pointScreen);
-    Canvas.currentScreen = pointScreen.NAME;
+
+    const circleScreen: SketchScreen = new CircleScreen(buildCircleScreen());
+    Canvas.addScreen(circleScreen);
+
+    Canvas.currentScreen = circleScreen.NAME;
 };
 
 p5.draw = (): void => {
@@ -126,6 +131,31 @@ function buildPointScreen(): CanvasScreenConfig {
         })
         .addGraphics({
             NAME: 'point-graphics_widescreen',
+            ASPECT_RATIO: new AspectRatio(ASPECT_RATIOS.WIDESCREEN),
+            RESOLUTION: 1080
+        });
+
+    return builder.build() ?? {
+        NAME: 'default-screen',
+        ACTIVE_GRAPHICS: new GraphicsContext({NAME: 'default-graphics'})
+    };
+}
+
+function buildCircleScreen(): CanvasScreenConfig {
+    const builder: ScreenConfigBuilder = new ScreenConfigBuilder();
+    builder.setName('circle-screen')
+        .setActiveGraphics({
+            NAME: 'circle-graphics',
+            ASPECT_RATIO: new AspectRatio(ASPECT_RATIOS.SQUARE),
+            RESOLUTION: 1080
+        })
+        .addGraphics({
+            NAME: 'circle-graphics_social',
+            ASPECT_RATIO: new AspectRatio(ASPECT_RATIOS.SOCIAL_VIDEO),
+            RESOLUTION: 1080
+        })
+        .addGraphics({
+            NAME: 'circle-graphics_widescreen',
             ASPECT_RATIO: new AspectRatio(ASPECT_RATIOS.WIDESCREEN),
             RESOLUTION: 1080
         });
