@@ -2,7 +2,7 @@
 
 Copyright (C) 2024 brittni and the polar bear LLC.
 
-An exploration and testing project for the sketch context of the
+An exploration and testing project for the
 [@batpb/genart](https://www.npmjs.com/package/@batpb/genart)
 library.
 
