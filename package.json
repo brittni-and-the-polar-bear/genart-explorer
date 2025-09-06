@@ -1,20 +1,21 @@
 {
-  "name": "sketch-context-explorer",
-  "version": "0.0.1",
-  "description": "An exploration and testing project for the sketch context of the @batpb/genart library",
+  "name": "genart-explorer",
+  "version": "2.0.0-rc.3-alpha.0-0",
+  "description": "An exploration and testing project for the @batpb/genart library",
   "private": true,
   "scripts": {
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
+    "stats:dev": "webpack --mode development --profile --json > ./out/stats.json",
+    "stats:prod": "webpack --mode production --profile --json > ./out/stats.json",
     "dev": "webpack-dev-server --mode development",
     "lint:js": "eslint -c eslint.config.js.mjs ./eslint.config.js.mjs ./eslint.config.ts.mjs ./webpack.config.js",
     "lint:ts": "eslint -c eslint.config.ts.mjs ./src",
-    "stats": "webpack --mode development --profile --json > ./out/stats.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brittni-and-the-polar-bear/sketch-context-explorer.git"
+    "url": "git+https://github.com/brittni-and-the-polar-bear/genart-explorer.git"
   },
   "keywords": [
     "algorithmic art",
@@ -25,53 +26,48 @@
     "p5js",
     "p5-js",
     "typescript",
-    "testing",
-    "canvas",
-    "sketch",
-    "graphics",
-    "mouse",
-    "keyboard"
+    "testing"
   ],
   "author": {
     "name": "brittni and the polar bear",
-    "url": "https://linktr.ee/brittniandthepolarbear"
+    "url": "https://brittni-and-the-polar-bear.github.io/"
   },
   "contributors": [
     {
       "name": "brittni watkins",
-      "url": "https://linktr.ee/brittniwatkins"
+      "url": "https://blwatkins.github.io/"
     },
     {
       "name": "azurepolarbear",
-      "url": "https://linktr.ee/azurepolarbear"
+      "url": "https://azurepolarbear.github.io/"
     }
   ],
-  "license": "AGPL-3.0",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brittni-and-the-polar-bear/sketch-context-explorer/issues"
+    "url": "https://github.com/brittni-and-the-polar-bear/genart-explorer/issues"
   },
-  "homepage": "https://github.com/brittni-and-the-polar-bear/sketch-context-explorer#readme",
+  "homepage": "https://github.com/brittni-and-the-polar-bear/genart-explorer#readme",
   "dependencies": {
-    "@batpb/genart": "^2.0.0-rc2",
-    "p5": "^1.11.3"
+    "@batpb/genart": "^2.0.0-rc.3-alpha.0",
+    "p5": "^1.11.10"
   },
   "devDependencies": {
-    "@eslint/js": "^9.20.0",
-    "@stylistic/eslint-plugin": "^3.1.0",
+    "@eslint/js": "^9.35.0",
+    "@stylistic/eslint-plugin": "^5.3.1",
     "@types/eslint__js": "^8.42.3",
     "@types/p5": "^1.7.6",
     "css-loader": "^7.1.2",
-    "eslint": "^9.20.1",
-    "eslint-plugin-es-x": "^8.4.1",
-    "eslint-plugin-n": "^17.15.1",
+    "eslint": "^9.35.0",
+    "eslint-plugin-es-x": "^9.1.0",
+    "eslint-plugin-n": "^17.21.3",
     "eslint-plugin-security": "^3.0.1",
-    "html-webpack-plugin": "^5.6.3",
-    "mini-css-extract-plugin": "^2.9.2",
-    "ts-loader": "^9.5.2",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.24.1",
-    "webpack": "^5.98.0",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0",
+    "webpack": "^5.101.3",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
+    "webpack-dev-server": "^5.2.2"
   }
 }
