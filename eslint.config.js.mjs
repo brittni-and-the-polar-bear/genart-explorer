@@ -33,13 +33,13 @@ import stylistic from '@stylistic/eslint-plugin';
 
 export default [
     eslint.configs.recommended,
-    es_x.configs['flat/restrict-to-es2022'],
+    es_x.configs['flat/restrict-to-es2023'],
     node.configs['flat/recommended'],
     security.configs.recommended,
-    stylistic.configs['recommended-flat'],
+    stylistic.configs['recommended'],
     {
         languageOptions: {
-            ecmaVersion: 2022,
+            ecmaVersion: 2023,
             sourceType: 'module'
         },
         rules: {
@@ -122,7 +122,7 @@ export default [
                 }
             ],
 
-            '@stylistic/indent-binary-ops': 'off',
+            '@stylistic/indent-binary-ops': ['error', 4],
 
             '@stylistic/member-delimiter-style': ['error', {
                 multiline: {
@@ -141,19 +141,11 @@ export default [
                 'single',
                 {
                     avoidEscape: true,
-                    allowTemplateLiterals: true
+                    allowTemplateLiterals: 'always'
                 }
             ],
 
-            '@stylistic/semi': ['error', 'always'],
-
-            /* eslint-plugin-security */
-
-            'security/detect-object-injection': 'off',
-
-            /* eslint-plugin-n */
-
-            'n/no-missing-import': 'off'
+            '@stylistic/semi': ['error', 'always']
         }
     }
 ];

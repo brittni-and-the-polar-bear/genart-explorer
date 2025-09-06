@@ -35,24 +35,24 @@ import tsEslint from 'typescript-eslint';
 
 export default tsEslint.config(
     eslint.configs.recommended,
-    es_x.configs['flat/restrict-to-es2022'],
+    es_x.configs['flat/restrict-to-es2023'],
     node.configs['flat/recommended'],
     security.configs.recommended,
-    stylistic.configs['recommended-flat'],
+    stylistic.configs['recommended'],
     ...tsEslint.configs.recommendedTypeChecked,
     ...tsEslint.configs.strictTypeChecked,
     ...tsEslint.configs.stylisticTypeChecked,
     {
         languageOptions: {
-            ecmaVersion: 2022,
+            ecmaVersion: 2023,
             sourceType: 'module',
             parserOptions: {
-                projectService: true,
-                tsconfigRootDir: import.meta.dirname
+                projectService: true
             }
         },
         rules: {
             /* @eslint/js */
+
             'array-callback-return': ['error', {
                 checkForEach: true
             }],
@@ -131,7 +131,7 @@ export default tsEslint.config(
                 }
             ],
 
-            '@stylistic/indent-binary-ops': 'off',
+            '@stylistic/indent-binary-ops': ['error', 4],
 
             '@stylistic/member-delimiter-style': ['error', {
                 multiline: {
@@ -150,26 +150,16 @@ export default tsEslint.config(
                 'single',
                 {
                     avoidEscape: true,
-                    allowTemplateLiterals: true
+                    allowTemplateLiterals: 'always'
                 }
             ],
 
             '@stylistic/semi': ['error', 'always'],
 
-            /* eslint-plugin-security */
-
-            'security/detect-object-injection': 'off',
-
-            /* eslint-plugin-n */
-
-            'n/no-missing-import': 'off',
-
-            /* typescript-eslint */
+            /* @typescript-eslint */
 
             'dot-notation': 'off',
-            '@typescript-eslint/dot-notation': ['error', {
-                allowKeywords: false
-            }],
+            '@typescript-eslint/dot-notation': 'error',
 
             'no-array-constructor': 'off',
             '@typescript-eslint/no-array-constructor': 'error',
@@ -206,7 +196,7 @@ export default tsEslint.config(
 
             '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 
-            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-explicit-any': 'error',
 
             '@typescript-eslint/no-extraneous-class': ['error', {
                 allowStaticOnly: true
@@ -214,12 +204,16 @@ export default tsEslint.config(
 
             '@typescript-eslint/no-inferrable-types': 'off',
 
-            '@typescript-eslint/prefer-for-of': 'off',
+            '@typescript-eslint/prefer-for-of': 'error',
 
             '@typescript-eslint/restrict-template-expressions': ['error', {
                 allowNumber: true,
                 allowBoolean: true
-            }]
+            }],
+
+            /* eslint-plugin-n */
+
+            'n/no-missing-import': 'off'
         }
     }
 );
