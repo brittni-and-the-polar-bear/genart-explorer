@@ -1,22 +1,22 @@
 {
   "compilerOptions": {
     /* Language and Environment */
-    "target": "es2022",
+    "target": "es2023",
     "skipLibCheck": false,
     "skipDefaultLibCheck": false,
 
     /* Modules */
     "module": "es2022",
     "moduleResolution": "bundler",
-    "rootDir": "./src",
+    "rootDir": "./",
 
     /* JSON Modules */
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "resolvePackageJsonExports": false,
     "resolvePackageJsonImports": false,
 
     /* Emit */
-    "outDir": "./out/compiled",
+    "outDir": "./_compiled",
     "sourceMap": true,
     "declaration": false,
     "declarationMap": false,

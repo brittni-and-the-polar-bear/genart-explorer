@@ -8,3 +8,6 @@ out/
 
 # JetBrains IDEs
 .idea/
+
+# TypeScript
+_compiled/
