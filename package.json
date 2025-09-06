@@ -9,7 +9,7 @@
     "stats:dev": "webpack --mode development --profile --json > ./out/stats.json",
     "stats:prod": "webpack --mode production --profile --json > ./out/stats.json",
     "dev": "webpack-dev-server --mode development",
-    "lint:js": "eslint -c eslint.config.js.mjs ./eslint.config.js.mjs ./eslint.config.ts.mjs ./webpack.config.js",
+    "lint:js": "eslint -c eslint.config.js.mjs ./eslint.config.js.mjs ./eslint.config.ts.mjs ./webpack.config.cjs",
     "lint:ts": "eslint -c eslint.config.ts.mjs ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
