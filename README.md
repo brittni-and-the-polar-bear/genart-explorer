@@ -19,9 +19,8 @@ library.
 
 ----
 
-### project releases
+### project info
 
-![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/brittni-and-the-polar-bear/genart-explorer)
 ![GitHub License](https://img.shields.io/github/license/brittni-and-the-polar-bear/genart-explorer)
 
 ----
@@ -37,8 +36,6 @@ library.
 
 ![GitHub issues by-label (bug)](https://img.shields.io/github/issues/brittni-and-the-polar-bear/genart-explorer/bug?color=red)
 ![GitHub issues by-label (security)](https://img.shields.io/github/issues/brittni-and-the-polar-bear/genart-explorer/security?color=red)
-
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/brittni-and-the-polar-bear/genart-explorer/latest)
 
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/brittni-and-the-polar-bear/genart-explorer)
 
