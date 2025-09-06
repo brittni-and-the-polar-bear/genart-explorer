@@ -20,7 +20,7 @@
  * SOFTWARE.
  */
 
-/* This configuration is designed to lint all JavaScript configuration files */
+/* This configuration is designed to lint all JavaScript files in the project. */
 
 import eslint from '@eslint/js';
 

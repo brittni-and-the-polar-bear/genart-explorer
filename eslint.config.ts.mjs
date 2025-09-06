@@ -20,7 +20,7 @@
  * SOFTWARE.
  */
 
-/* This configuration is designed to parse all TypeScript files in the `src` directory */
+/* This configuration is designed to lint all TypeScript files in the project. */
 
 import eslint from '@eslint/js';
 
