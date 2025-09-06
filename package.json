@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/brittni-and-the-polar-bear/genart-explorer#readme",
   "dependencies": {
-    "@batpb/genart": "^2.0.0-rc.3-alpha.0",
+    "@batpb/genart": "2.0.0-rc.3-alpha.0",
     "p5": "^1.11.10"
   },
   "devDependencies": {
