@@ -45,9 +45,6 @@ updates:
           - "major"
           - "minor"
           - "patch"
-    reviewers:
-      - "azurepolarbear"
-      - "blwatkins"
 
   - package-ecosystem: github-actions
     directory: "/"
@@ -57,6 +54,3 @@ updates:
     commit-message:
       prefix: "dependabot github-action update"
       include: "scope"
-    reviewers:
-      - "azurepolarbear"
-      - "blwatkins"
