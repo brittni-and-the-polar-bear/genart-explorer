@@ -55,7 +55,7 @@ updates:
       interval: weekly
     target-branch: "main"
     commit-message:
-      prefix: "dependabot github-action update"
+      prefix: "dependabot github-actions update"
       include: "scope"
     labels:
       - "dependencies"
