@@ -20,8 +20,9 @@
  * SOFTWARE.
  */
 
-import { string } from '@batpb/genart';
+import { StringValidator, palette_color } from '@batpb/genart';
 
-const { StringValidator } = string;
+const { PC_000000 } = palette_color;
 
 console.log(StringValidator.isHex('Hello World!'));
+console.log(StringValidator.isHex(PC_000000.HEX));
