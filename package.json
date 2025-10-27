@@ -50,12 +50,12 @@
   "homepage": "https://github.com/brittni-and-the-polar-bear/genart-explorer#readme",
   "dependencies": {
     "@batpb/genart": "^2.0.0-rc.3-alpha.0",
-    "p5": "^1.11.10"
+    "p5": "^1.11.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
     "@stylistic/eslint-plugin": "^5.3.1",
-    "@types/p5": "^1.7.6",
+    "@types/p5": "^1.7.7",
     "css-loader": "^7.1.2",
     "eslint": "^9.35.0",
     "eslint-plugin-es-x": "^9.1.0",
