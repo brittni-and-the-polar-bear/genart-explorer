@@ -20,31 +20,22 @@
  * SOFTWARE.
  */
 
-import { ASPECT_RATIOS, Canvas, ContextConfig, ContextConfigBuilder, P5Context } from '@batpb/genart';
+import p5 from 'p5';
 
-import '../assets/css/sketch.css';
+import { CanvasScreen, GraphicsContext } from '@batpb/genart';
 
-function buildCanvasConfig(): ContextConfig {
-    const builder: ContextConfigBuilder = new ContextConfigBuilder();
-    builder.setName('genart-explorer-canvas');
-    builder.setAspectRatio(ASPECT_RATIOS.SQUARE);
-    builder.setMatchContainerRatio(false);
-    builder.setRenderType(P5Context.instance.P2D);
-    builder.setResolution(720);
-    return builder.build();
+// export function buildSketchScreenConfig(): CanvasScreenConfig {
+//     const builder: CanvasScreenConfigBuilder
+// }
+
+export class SketchScreen extends CanvasScreen {
+    public override drawToGraphics(context: GraphicsContext) {
+        const graphics: p5.Graphics = context.GRAPHICS;
+        graphics.background(0);
+        graphics.stroke(0, 255, 0);
+        graphics.strokeWeight(context.defaultStrokeWeight * 5);
+        graphics.ellipse(context.center.x, context.center.y, 100, 100);
+        graphics.ellipse(context.width / 4.0, context.center.y, 100, 100);
+        graphics.ellipse(3.0 * context.width / 4.0, context.center.y, 100, 100);
+    }
 }
-
-P5Context.instance.setup = (): void => {
-    Canvas.buildCanvas(buildCanvasConfig(), true);
-    Canvas.resize();
-};
-
-P5Context.instance.draw = (): void => {
-    P5Context.instance.background(0);
-    P5Context.instance.fill(255, 0, 0);
-    P5Context.instance.ellipse(Canvas.center.x, Canvas.center.y, 50, 50);
-};
-
-P5Context.instance.windowResized = (): void => {
-    Canvas.resize();
-};
