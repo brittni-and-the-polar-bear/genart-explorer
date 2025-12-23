@@ -20,31 +20,28 @@
  * SOFTWARE.
  */
 
-import { ASPECT_RATIOS, Canvas, ContextConfig, ContextConfigBuilder, P5Context } from '@batpb/genart';
+import { Canvas, CanvasScreen, P5Context, ASPECT_RATIOS } from '@batpb/genart';
+
+import { buildCanvasScreenTest } from './sketch/canvas/canvas-screen-test';
+import { buildContextConfig } from './context-config-builder';
 
 import '../assets/css/sketch.css';
 
-function buildCanvasConfig(): ContextConfig {
-    const builder: ContextConfigBuilder = new ContextConfigBuilder();
-    builder.setName('genart-explorer-canvas');
-    builder.setAspectRatio(ASPECT_RATIOS.SQUARE);
-    builder.setMatchContainerRatio(false);
-    builder.setRenderType(P5Context.instance.P2D);
-    builder.setResolution(720);
-    return builder.build();
-}
+const canvasScreenTest: CanvasScreen = buildCanvasScreenTest();
+
+// P5Context.reset();
 
 P5Context.instance.setup = (): void => {
-    Canvas.buildCanvas(buildCanvasConfig(), true);
-    Canvas.resize();
+    Canvas.buildCanvas(buildContextConfig('genart-explorer-canvas', ASPECT_RATIOS.SQUARE, 500), true);
+    Canvas.addScreen(canvasScreenTest);
+    Canvas.currentScreen = canvasScreenTest.NAME;
+    // Canvas.resize();
 };
 
 P5Context.instance.draw = (): void => {
-    P5Context.instance.background(0);
-    P5Context.instance.fill(255, 0, 0);
-    P5Context.instance.ellipse(Canvas.center.x, Canvas.center.y, 50, 50);
+    Canvas.draw();
 };
 
 P5Context.instance.windowResized = (): void => {
-    Canvas.resize();
+    // Canvas.resize();
 };
